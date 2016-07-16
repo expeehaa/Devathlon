@@ -6,17 +6,22 @@ import java.util.List;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.serialization.ConfigurationSerialization;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.expeehaa.spigot.config.Configuration;
 import de.expeehaa.spigot.config.Wand;
+import de.expeehaa.spigot.config.wrapper.PotionEffectConfigWrapper;
+import de.expeehaa.spigot.config.wrapper.WandConfigWrapper;
 
 public class Wands extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
+		ConfigurationSerialization.registerClass(WandConfigWrapper.class);
+		ConfigurationSerialization.registerClass(PotionEffectConfigWrapper.class);
 		Configuration.reloadConfig(this);
 		this.getServer().getPluginManager().registerEvents(new WandsListener(this), this);
 	}
