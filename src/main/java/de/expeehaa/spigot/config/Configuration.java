@@ -29,11 +29,11 @@ public class Configuration {
 			
 			Map<String, WandConfigWrapper> wcwmap = new HashMap<String, WandConfigWrapper>();
 			
-			WandConfigWrapper wcw1 = new WandConfigWrapper(Material.STICK.toString(), (short)0, pecwlist, 1.5d, true, 10);
+			WandConfigWrapper wcw1 = new WandConfigWrapper(Material.STICK.toString(), 0, pecwlist, 1.5d, true, 10);
 			pecwlist.add(pecw2);
 			wcwmap.put("stickwand", wcw1);
 			
-			WandConfigWrapper wcw2 = new WandConfigWrapper(Material.DIAMOND_SWORD.toString(), (short)0, pecwlist, 2d, true, 20);
+			WandConfigWrapper wcw2 = new WandConfigWrapper(Material.DIAMOND_SWORD.toString(), 0, pecwlist, 2d, true, 20);
 			wcwmap.put("diaswordwand", wcw2);
 			
 			main.getConfig().addDefault("wands", wcwmap);
@@ -61,7 +61,7 @@ public class Configuration {
 		
 		private String material;
 		
-		private short damaged;
+		private int damaged;
 		
 		private List<PotionEffectConfigWrapper> potionEffects;
 		
@@ -96,7 +96,7 @@ public class Configuration {
 			}
 		}
 		
-		public WandConfigWrapper(String material, short damaged, List<PotionEffectConfigWrapper> potionEffects, double speed, boolean rightClick, double damage) {
+		public WandConfigWrapper(String material, int damaged, List<PotionEffectConfigWrapper> potionEffects, double speed, boolean rightClick, double damage) {
 			this.material = material;
 			this.damaged = damaged;
 			this.potionEffects = potionEffects;

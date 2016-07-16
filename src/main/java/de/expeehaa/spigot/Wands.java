@@ -49,7 +49,7 @@ public class Wands extends JavaPlugin {
 				return true;
 			}
 			
-			ItemStack is = new ItemStack(wand.material, 1, wand.damaged);
+			ItemStack is = new ItemStack(wand.material, 1, (short)wand.damaged);
 			p.getInventory().addItem(is);
 			return true;
 		}
