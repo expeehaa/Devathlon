@@ -12,11 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.potion.PotionEffect;
 
 import de.expeehaa.spigot.config.Configuration;
 import de.expeehaa.spigot.config.Wand;
@@ -56,7 +54,6 @@ public class WandsListener implements Listener {
 		sb.setShooter(p);
 		sb.setVelocity(p.getEyeLocation().getDirection().multiply(wand.speed));
 		sbWandMap.put(sb, wand);
-		
 	}
 	
 	@EventHandler

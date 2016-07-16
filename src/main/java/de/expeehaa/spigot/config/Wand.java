@@ -9,12 +9,11 @@ public class Wand {
 	
 	public Material material;
 	public int damaged;
+	public boolean rightClick;
 	
 	public List<PotionEffect> potionEffectList;
 	
 	public double speed;
-	
-	public boolean rightClick;
 	
 	public double damage;
 	

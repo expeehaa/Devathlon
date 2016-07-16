@@ -16,26 +16,38 @@ public class Configuration {
 	public static void reloadConfig(Wands main){
 		main.reloadConfig();
 		
-		if(!main.getConfig().isList("wands")) return;
+		if(!main.getConfig().isList("wands")) {
+			PotionEffectConfigWrapper pecw = new PotionEffectConfigWrapper(PotionEffectType.LEVITATION.toString(), 1000, 3, true, true);
+			List<PotionEffectConfigWrapper> pecwlist = new ArrayList<PotionEffectConfigWrapper>();
+			pecwlist.add(pecw);
+			WandConfigWrapper wcw = new WandConfigWrapper(Material.STICK.toString(), 0, pecwlist, 1.5d, true, 10);
+			List<WandConfigWrapper> wcwlist = new ArrayList<WandConfigWrapper>();
+			wcwlist.add(wcw);
+			main.getConfig().addDefault("wands", wcwlist);
+			
+			main.getConfig().options().copyDefaults(true);
+			main.saveConfig();
+			main.reloadConfig();
+		}
+		/*
 		List<?> list = main.getConfig().getList("wands");
 		int loadingFailed = 0;
 		
 		for (Object obj : list) {
-			if(obj instanceof WandConfigWrapper){
-				try {
-					WandConfigWrapper wcw = (WandConfigWrapper) obj;
-					wandList.add(wcw.toWand());
-				} catch (Exception e) {
-					loadingFailed++;
-					main.getLogger().warning(e.getMessage());
-				}
+			try {
+				WandConfigWrapper wcw = (WandConfigWrapper) obj;
+				wandList.add(wcw.toWand());
+			} catch (Exception e) {
+				loadingFailed++;
+				main.getLogger().warning(e.getMessage());
 			}
 		}
 		
 		main.getLogger().info("Successfully loaded " + wandList.size() + " Wands. Loading failed " + loadingFailed + " times.");
+		*/
 	}
 	
-	private class WandConfigWrapper {
+	private static class WandConfigWrapper {
 		
 		public String material;
 		
@@ -67,7 +79,7 @@ public class Configuration {
 		}
 	}
 	
-	private class PotionEffectConfigWrapper {
+	private static class PotionEffectConfigWrapper {
 		
 		public String potionEffectType;
 		

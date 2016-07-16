@@ -9,6 +9,7 @@ public class Wands extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		Configuration.reloadConfig(this);
+		//this.getServer().getPluginManager().registerEvents(new WandsListener(this), this);
 	}
 	
 	@Override
