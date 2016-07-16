@@ -82,6 +82,7 @@ public class Wands extends JavaPlugin {
 			
 			Configuration.reloadConfig(this);
 			sender.sendMessage(ChatColor.GREEN + "Config successfully reloaded!");
+			return true;
 		}
 		
 		return false;

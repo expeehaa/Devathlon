@@ -67,7 +67,7 @@ public class WandsListener implements Listener {
 		Snowball sb = (Snowball)p.getWorld().spawnEntity(p.getEyeLocation().add(p.getEyeLocation().getDirection()), EntityType.SNOWBALL);
 		sb.setGravity(false);
 		sb.setShooter(p);
-		sb.setVelocity(p.getEyeLocation().getDirection().multiply(wand.speed));
+		new SnowballRunnable(sb, p.getEyeLocation().getDirection().multiply(wand.speed)).runTaskTimer(main, 0, 20);
 		//puts snowball and wand into map -> currently flying
 		sbWandMap.put(sb, wand);
 		//start runnable for particle trails

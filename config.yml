@@ -1,0 +1,123 @@
+wands:
+  chickenspade:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 3.0
+    material: IRON_SPADE
+    entitySpawnList:
+    - CHICKEN
+    particleTrail: &id001
+    - ==: de.expeehaa.spigot.config.wrapper.ParticleTrailConfigWrapper
+      offsetX: 1.0
+      offsetZ: 1.0
+      offsetY: 1.0
+      count: 10
+      particle: REDSTONE
+    damaged: 0
+    explosionSize: 0.001
+    speed: 1.3
+    potionEffects: []
+  giantwand:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 3.0
+    material: GOLD_SPADE
+    entitySpawnList:
+    - GIANT
+    - GIANT
+    particleTrail: []
+    damaged: 20
+    explosionSize: 5.0
+    speed: 2.0
+    potionEffects: []
+  diaswordwand:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 20.0
+    material: DIAMOND_SWORD
+    entitySpawnList: []
+    particleTrail: *id001
+    damaged: 0
+    explosionSize: 5.0
+    speed: 5.0
+    potionEffects:
+    - ==: de.expeehaa.spigot.config.wrapper.PotionEffectConfigWrapper
+      duration: 1000
+      potionEffectType: POISON
+      amplifier: 3
+      ambient: true
+      particles: true
+  stickwand:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 5.0
+    material: STICK
+    entitySpawnList: []
+    particleTrail:
+    - ==: de.expeehaa.spigot.config.wrapper.ParticleTrailConfigWrapper
+      offsetX: 0.5
+      offsetZ: 0.5
+      offsetY: 0.5
+      count: 3
+      particle: EXPLOSION_NORMAL
+    damaged: 0
+    explosionSize: 0.5
+    speed: 1.0
+    potionEffects:
+    - ==: de.expeehaa.spigot.config.wrapper.PotionEffectConfigWrapper
+      duration: 1000
+      potionEffectType: LEVITATION
+      amplifier: 3
+      ambient: true
+      particles: true
+  machinegun:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 1.5
+    material: IRON_SWORD
+    entitySpawnList: []
+    particleTrail:
+    - ==: de.expeehaa.spigot.config.wrapper.ParticleTrailConfigWrapper
+      offsetX: 2.0
+      offsetZ: 2.0
+      offsetY: 2.0
+      count: 5
+      particle: EXPLOSION_NORMAL
+    damaged: 1
+    explosionSize: 0.0
+    speed: 15.0
+    potionEffects: []
+  levitator:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: false
+    damage: 0.0
+    material: IRON_SWORD
+    entitySpawnList: []
+    particleTrail: []
+    damaged: 1
+    explosionSize: 0.0
+    speed: 3.0
+    potionEffects:
+    - ==: de.expeehaa.spigot.config.wrapper.PotionEffectConfigWrapper
+      duration: 200
+      potionEffectType: LEVITATION
+      amplifier: 3
+      ambient: true
+      particles: true
+  meteor:
+    ==: de.expeehaa.spigot.config.wrapper.WandConfigWrapper
+    rightClick: true
+    damage: 100.0
+    material: FIREWORK_CHARGE
+    entitySpawnList: []
+    particleTrail: 
+    - ==: de.expeehaa.spigot.config.wrapper.ParticleTrailConfigWrapper
+      offsetX: 1.5
+      offsetZ: 1.5
+      offsetY: 1.5
+      count: 20
+      particle: FLAME
+    damaged: 0
+    explosionSize: 50.0
+    speed: 0.8
+    potionEffects: []
