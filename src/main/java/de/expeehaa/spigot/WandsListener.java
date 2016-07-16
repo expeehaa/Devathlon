@@ -2,6 +2,7 @@ package de.expeehaa.spigot;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -38,7 +39,8 @@ public class WandsListener implements Listener {
 		
 		ItemStack is = e.getItem();
 		
-		for (Wand w : Configuration.wandList) {
+		for (Entry<String, Wand> entry : Configuration.wandMap.entrySet()) {
+			Wand w = entry.getValue();
 			boolean matchMaterial 	= 	is.getData().getItemType() == w.material ? true : false;
 			boolean matchDurability = 	is.getDurability() == w.damaged ? true : false;
 			boolean matchClick 		= 	(e.getAction().equals(Action.RIGHT_CLICK_AIR) || e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) & w.rightClick ? true : false;

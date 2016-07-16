@@ -2,3 +2,7 @@ name: Wands
 main: de.expeehaa.spigot.Wands
 author: expeehaa
 version: 1.0
+commands:
+  wand:
+    usage: /wand
+    description: Get any currently available wand.
