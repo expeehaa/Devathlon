@@ -16,6 +16,7 @@ public class ParticleTrailConfigWrapper implements ConfigurationSerializable {
 	
 	private int count;
 	
+	//constructor for ConfigurationSerializable
 	public ParticleTrailConfigWrapper(Map<String, Object> map){
 		this.particle = (String) map.get("particle");
 		this.count = (Integer) map.get("count");
@@ -24,6 +25,7 @@ public class ParticleTrailConfigWrapper implements ConfigurationSerializable {
 		this.offsetZ = (Double) map.get("offsetZ");
 	}
 	
+	//constructor with parameters
 	public ParticleTrailConfigWrapper(String particle, int count, double offsetX, double offsetY, double offsetZ) {
 		this.particle = particle;
 		this.count = count;
@@ -32,10 +34,12 @@ public class ParticleTrailConfigWrapper implements ConfigurationSerializable {
 		this.offsetZ = offsetZ;
 	}
 	
+	//creates a ParticleTrail object out of this wrapper object
 	public ParticleTrail toParticle(){
 		return new ParticleTrail(Particle.valueOf(particle), count, offsetX, offsetY, offsetZ);
 	}
 
+	//serialization method from ConfigurationSerializable
 	public Map<String, Object> serialize() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		

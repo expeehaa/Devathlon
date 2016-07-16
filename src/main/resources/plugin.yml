@@ -6,3 +6,27 @@ commands:
   wand:
     usage: /wand
     description: Get any currently available wand.
+    permission: wands.getWandsByCommand
+    permission-message: You don't have permission for this command!
+  wandcfg:
+    usage: /wandcfg
+    description: Reload the config of the wands plugin.
+    permission: wands.reloadConfig
+    permission-message: You don't have permission for this command!
+permissions:
+  wands.*:
+    description: Do everything you can with the wands plugin.
+    default: op
+    children:
+      wands.getWandsByCommand: true
+      wands.useWands: true
+      wands.reloadConfig: true
+  wands.getWandsByCommand:
+    description: Easily get every wand from a command.
+    default: true
+  wands.useWands:
+    description: Use wands.
+    default: true
+  wands.reloadConfig:
+    description: Reload the config of the wands plugin.
+    default: op

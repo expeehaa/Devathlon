@@ -19,6 +19,7 @@ public class PotionEffectConfigWrapper implements ConfigurationSerializable {
 	
 	private boolean particles;
 	
+	//constructor for ConfigurationSerializable
 	public PotionEffectConfigWrapper(Map<String, Object> map){
 		this.potionEffectType = (String) map.get("potionEffectType");
 		this.duration = (Integer) map.get("duration");
@@ -27,6 +28,7 @@ public class PotionEffectConfigWrapper implements ConfigurationSerializable {
 		this.particles = (Boolean) map.get("particles");
 	}
 	
+	//constructor with parameters
 	public PotionEffectConfigWrapper(String potionEffectType, int duration, int amplifier, boolean ambient, boolean particles) {
 		this.potionEffectType = potionEffectType;
 		this.duration = duration;
@@ -35,10 +37,12 @@ public class PotionEffectConfigWrapper implements ConfigurationSerializable {
 		this.particles = particles;
 	}
 	
+	//creates a PotionEffect object out of this wrapper object
 	public PotionEffect toPotionEffect(){
 		return new PotionEffect(PotionEffectType.getByName(potionEffectType), duration, amplifier, ambient, particles);
 	}
 
+	//serialization method from ConfigurationSerializable
 	public Map<String, Object> serialize() {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
