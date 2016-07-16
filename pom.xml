@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.expeehaa.spigot</groupId>
   <artifactId>Wands</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <name>Wands</name>
-  <description>Have fun with much different wands in Minecraft.</description>
+  <description>Have fun with many different customisable wands in Minecraft.</description>
   
   <dependencies>
   	<dependency>

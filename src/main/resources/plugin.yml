@@ -4,7 +4,7 @@ author: expeehaa
 version: 1.0
 commands:
   wand:
-    usage: /wand
+    usage: /wand <name>
     description: Get any currently available wand.
     permission: wands.getWandsByCommand
     permission-message: You don't have permission for this command!
