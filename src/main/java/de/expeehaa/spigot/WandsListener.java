@@ -22,6 +22,7 @@ import de.expeehaa.spigot.config.Wand;
 
 public class WandsListener implements Listener {
 
+	@SuppressWarnings("unused")
 	private Wands main;
 	
 	private Map<Snowball, Wand> sbWandMap = new HashMap<Snowball, Wand>();
