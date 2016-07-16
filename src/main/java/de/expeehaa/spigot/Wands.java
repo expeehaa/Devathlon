@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import de.expeehaa.spigot.config.Configuration;
 import de.expeehaa.spigot.config.Wand;
+import de.expeehaa.spigot.config.wrapper.ParticleTrailConfigWrapper;
 import de.expeehaa.spigot.config.wrapper.PotionEffectConfigWrapper;
 import de.expeehaa.spigot.config.wrapper.WandConfigWrapper;
 
@@ -22,6 +23,7 @@ public class Wands extends JavaPlugin {
 	public void onLoad() {
 		ConfigurationSerialization.registerClass(WandConfigWrapper.class, "WandWrapper");
 		ConfigurationSerialization.registerClass(PotionEffectConfigWrapper.class, "PotionEffectWrapper");
+		ConfigurationSerialization.registerClass(ParticleTrailConfigWrapper.class, "ParticleTrailWrapper");
 	}
 	
 	@Override

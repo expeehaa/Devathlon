@@ -14,7 +14,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -59,7 +58,7 @@ public class WandsListener implements Listener {
 		sb.setVelocity(p.getEyeLocation().getDirection().multiply(wand.speed));
 		sbWandMap.put(sb, wand);
 		for (ParticleTrail pt : wand.particleTrail) {
-			new ParticleRunnable(sb, pt).runTaskTimer(main, 5, 5);
+			new ParticleRunnable(sb, pt).runTaskTimer(main, 1, 1);
 		}
 	}
 	
@@ -80,11 +79,10 @@ public class WandsListener implements Listener {
 		}
 		
 		e.setDamage(wand.damage);
-		
 	}
 	
 	@EventHandler
-	public void onSnowballDeath(EntityDeathEvent e){
+	public void onSnowballDeath(org.bukkit.event.entity.ProjectileHitEvent e){
 		if(!e.getEntityType().equals(EntityType.SNOWBALL)) return;
 		if(sbWandMap.containsKey((Snowball)e.getEntity())){
 			
