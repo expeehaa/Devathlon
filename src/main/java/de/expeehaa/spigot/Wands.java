@@ -19,9 +19,14 @@ import de.expeehaa.spigot.config.wrapper.WandConfigWrapper;
 public class Wands extends JavaPlugin {
 
 	@Override
+	public void onLoad() {
+		ConfigurationSerialization.registerClass(WandConfigWrapper.class, "WandWrapper");
+		ConfigurationSerialization.registerClass(PotionEffectConfigWrapper.class, "PotionEffectWrapper");
+	}
+	
+	@Override
 	public void onEnable() {
-		ConfigurationSerialization.registerClass(WandConfigWrapper.class);
-		ConfigurationSerialization.registerClass(PotionEffectConfigWrapper.class);
+		
 		Configuration.reloadConfig(this);
 		this.getServer().getPluginManager().registerEvents(new WandsListener(this), this);
 	}
